@@ -74,6 +74,13 @@
       border-radius: 15px;
       box-shadow: 0 4px 20px rgba(255, 182, 230, 0.3);
     }
+    .kinder-container {
+      width: 100px;
+      height: 150px;
+      margin: 0 auto;
+      background: url('https://i.pinimg.com/originals/6f/6d/8b/6f6d8b3e3c7b3c3e3c7b3c3e3c7b3c3e.png') center/contain no-repeat;
+      position: relative;
+    }
     .interactive-box {
       background-color: rgba(42, 19, 68, 0.7);
       border-radius: 15px;
@@ -189,23 +196,24 @@
     </div>
     
     <div id="question2" class="hidden">
-      <div class="question">Will you be my Minion forever? 🍫</div>
+      <div class="kinder-container"></div>
+      <div class="question">Will you share this Kinder Joy with me? 🍫</div>
       <div class="options">
-        <button class="option-btn" onclick="respond('chocolate')">Like chocolate! 💗</button>
-        <button class="option-btn" onclick="respond('surprise')">Like Minions! 💛</button>
+        <button class="option-btn" onclick="respond('chocolate')">The chocolate half! 💗</button>
+        <button class="option-btn" onclick="respond('toy')">The toy surprise! 🎁</button>
       </div>
     </div>
     
     <div id="question3" class="hidden">
-      <div class="question">Can we share endless love like these Minions? 👫</div>
+      <div class="question">Can our love be as sweet as Kinder chocolate? 👫</div>
       <div class="options">
-        <button class="option-btn" onclick="respond('always')">Banana! I mean, Always! 💞</button>
-        <button class="option-btn" onclick="createChocolates()">Throw chocolates first! 🍫</button>
+        <button class="option-btn" onclick="respond('always')">Always! 💞</button>
+        <button class="option-btn" onclick="createChocolates()">Chocolate rain first! 🍫</button>
       </div>
     </div>
     
     <div id="final-response" class="hidden">
-      <div class="response">Minion love unlocked forever! Bello! 💝</div>
+      <div class="response">Our love is the best Kinder surprise! Forever my Minion 💝</div>
       <button class="option-btn" onclick="celebrate()" style="margin-top: 1.5rem; background: linear-gradient(145deg, #c53d9a 0%, #ff6bcd 100%);">Celebrate Love! 💖</button>
     </div>
     
@@ -214,8 +222,8 @@
   
   <p class="message">
     I promise to be more understanding from now on...<br>
-    Let's be happy like these Minions!<br>
-    Your smile makes my heart do the Minion dance 💝
+    Let's share Kinder Joy surprises together!<br>
+    Your smile is my favorite toy inside every heart 💝
   </p>
   
   <div class="footer">Forever your Vicky 💙</div>
@@ -249,12 +257,12 @@
         document.getElementById('question2').classList.remove('hidden');
       } 
       else if (answer === 'chocolate') {
-        responseText.textContent = "Sweet like chocolate! Just like you! 💗";
+        responseText.textContent = "Sweet like Kinder chocolate! Just like you! 💗";
         document.getElementById('question2').classList.add('hidden');
         document.getElementById('question3').classList.remove('hidden');
       }
-      else if (answer === 'surprise') {
-        responseText.textContent = "Minion love is the best surprise! Bello! 💛";
+      else if (answer === 'toy') {
+        responseText.textContent = "Every moment with you is a wonderful surprise! 🎁";
         document.getElementById('question2').classList.add('hidden');
         document.getElementById('question3').classList.remove('hidden');
       }
@@ -293,6 +301,27 @@
       }
     }
     
+    function createKinderToy() {
+      const toys = [
+        'https://cdn-icons-png.flaticon.com/512/3081/3081840.png', // chocolate
+        'https://cdn-icons-png.flaticon.com/512/3199/3199938.png', // teddy
+        'https://cdn-icons-png.flaticon.com/512/3081/3081559.png', // car
+        'https://cdn-icons-png.flaticon.com/512/3081/3081525.png'  // doll
+      ];
+      
+      const toy = document.createElement('div');
+      toy.classList.add('kinder-toy');
+      toy.style.backgroundImage = `url('${toys[Math.floor(Math.random() * toys.length)]}')`;
+      toy.style.left = Math.random() * 100 + '%';
+      toy.style.top = '-50px';
+      toy.style.animationDuration = (Math.random() * 2 + 1) + 's';
+      document.body.appendChild(toy);
+      
+      setTimeout(() => {
+        toy.remove();
+      }, 1000);
+    }
+    
     function createChocolates() {
       for (let i = 0; i < 5; i++) {
         const choco = document.createElement('div');
@@ -307,7 +336,7 @@
         }, 1000);
       }
       
-      document.getElementById('response-text').textContent = "Chocolate shower! Now let's be happy like Minions! 🍫💖";
+      document.getElementById('response-text').textContent = "Chocolate shower! Now let's share our Kinder Joy! 🍫💖";
       document.getElementById('question3').classList.add('hidden');
       document.getElementById('final-response').classList.remove('hidden');
     }
@@ -321,6 +350,13 @@
         }, i * 100);
       }
       
+      // Create kinder toys
+      for (let i = 0; i < 10; i++) {
+        setTimeout(() => {
+          createKinderToy();
+        }, i * 200);
+      }
+      
       // Create chocolates
       for (let i = 0; i < 15; i++) {
         setTimeout(() => {
@@ -328,7 +364,7 @@
         }, i * 150);
       }
       
-      document.getElementById('response-text').textContent = "Minion love forever! Bello! 💝";
+      document.getElementById('response-text').textContent = "Our love is sweeter than Kinder chocolate! Forever my Minion 💝";
     }
     
     // Remove loading text after 2 seconds
@@ -343,6 +379,7 @@
         this.style.transform = 'scale(1)';
       }, 300);
       createHearts();
+      createKinderToy();
     });
   </script>
 </body>
