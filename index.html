@@ -2,110 +2,80 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Your Name | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To My Minion 💝</title>
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      background-color: #f4f4f4;
-    }
-
-    header {
-      background: #333;
-      color: #fff;
-      padding: 1.5rem;
-      text-align: center;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-
-    nav a {
-      margin: 0 1rem;
-      color: #fff;
-      text-decoration: none;
-    }
-
-    section {
-      padding: 2rem;
-      max-width: 900px;
-      margin: auto;
-      background-color: #fff;
-      margin-top: 1rem;
-      border-radius: 10px;
-    }
-
-    h2 {
+      padding: 0;
+      background: linear-gradient(to bottom right, #add8e6, #ffc0cb);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: #333;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 0.5rem;
-    }
-
-    .project {
-      margin-bottom: 1.5rem;
-    }
-
-    footer {
       text-align: center;
-      padding: 1rem;
-      background: #333;
-      color: #fff;
+      overflow: hidden;
+    }
+    .sparkle {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: radial-gradient(circle, white 20%, transparent 70%);
+      animation: sparkle 2s infinite;
+    }
+    @keyframes sparkle {
+      0% {transform: scale(1); opacity: 1;}
+      50% {transform: scale(1.5); opacity: 0.5;}
+      100% {transform: scale(1); opacity: 1;}
+    }
+    h1 {
       margin-top: 2rem;
+      font-size: 2.5rem;
+      color: #444;
+    }
+    .message {
+      font-size: 1.2rem;
+      padding: 1rem 2rem;
+    }
+    .footer {
+      position: absolute;
+      bottom: 1rem;
+      width: 100%;
+      font-weight: bold;
+    }
+    .loading {
+      font-size: 1rem;
+      color: #777;
+      margin-top: 1rem;
     }
   </style>
 </head>
 <body>
+  <div class="loading">Pls Waiting with smile...🪐</div>
+  <h1>To My Minion 💝</h1>
+  <p class="message">
+En Bujuku kutty...🐷 . <br>
+       Sorry annaiki un situation epudinu purinjukama pesita dii Mini... mannichuu . <br>
+    Sorry 💝
+  </p>
+  <p class="message">
+    Unna naanu kaaya paduthiruntha , I really Sorry da 🫰🏻.<br>
+    Pls light ah konjama enakaga Siri paapom... 👀<br>
+    Ah ah ah avlotha ithe maari sirichutu iru athu pothu 🫰🏻💙🪐...
+  </p>
+  <div class="footer">Always your Vicky 💙</div>
 
-  <header>
-    <h1>Vignesh V</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+  <audio autoplay loop>
+    <source src="https://files.catbox.moe/c3wrw3.mp3" type="audio/mpeg">
+  </audio>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>Hello! I'm a passionate developer with a focus on web development and data analytics. I enjoy building clean and efficient code with modern technologies.</p>
-  </section>
-
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="project">
-      <h3>Project One</h3>
-      <p>Description of your first project. <br><a href="https://github.com/yourusername/project1" target="_blank">View on GitHub</a></p>
-    </div>
-    <div class="project">
-      <h3>Project Two</h3>
-      <p>Description of your second project. <br><a href="https://github.com/yourusername/project2" target="_blank">View on GitHub</a></p>
-    </div>
-  </section>
-
-  <section id="skills">
-    <h2>Skills</h2>
-    <ul>
-      <li>HTML, CSS, JavaScript</li>
-      <li>Python, SQL, Pandas</li>
-      <li>Git, GitHub, VS Code</li>
-      <li>Power BI, Excel</li>
-    </ul>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: your.email@example.com</p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/yourname" target="_blank">linkedin.com/in/yourname</a></p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Your Name</p>
-  </footer>
-
+  <script>
+    for (let i = 0; i < 50; i++) {
+      const sparkle = document.createElement('div');
+      sparkle.classList.add('sparkle');
+      sparkle.style.top = Math.random() * 100 + '%';
+      sparkle.style.left = Math.random() * 100 + '%';
+      sparkle.style.animationDelay = Math.random() * 2 + 's';
+      document.body.appendChild(sparkle);
+    }
+  </script>
 </body>
 </html>
