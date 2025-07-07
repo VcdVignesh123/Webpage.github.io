@@ -8,9 +8,9 @@
     body {
       margin: 0;
       padding: 0;
-      background: linear-gradient(to bottom right, #add8e6, #ffc0cb);
+      background: linear-gradient(135deg, #1a1a2e 0%, #3a1a4e 50%, #6a1b5a 100%);
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #333;
+      color: #f8e7f8;
       text-align: center;
       overflow-x: hidden;
       min-height: 100vh;
@@ -20,7 +20,7 @@
       position: absolute;
       width: 10px;
       height: 10px;
-      background: radial-gradient(circle, white 20%, transparent 70%);
+      background: radial-gradient(circle, #ffcce6 20%, transparent 70%);
       animation: sparkle 2s infinite;
       pointer-events: none;
       z-index: 10;
@@ -33,88 +33,92 @@
     h1 {
       margin-top: 1.5rem;
       font-size: 2.5rem;
-      color: #444;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+      color: #ffb6e6;
+      text-shadow: 0 0 10px rgba(255, 182, 230, 0.5);
     }
     .message {
       font-size: 1.2rem;
-      padding: 1rem 2rem;
-      background-color: rgba(255,255,255,0.3);
+      padding: 1.5rem;
+      background-color: rgba(58, 26, 78, 0.5);
       border-radius: 15px;
-      margin: 1rem auto;
+      margin: 1.5rem auto;
       max-width: 600px;
       backdrop-filter: blur(5px);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 15px rgba(106, 27, 90, 0.3);
+      border: 1px solid #6a1b5a;
     }
     .footer {
       position: absolute;
       bottom: 1rem;
       width: 100%;
       font-weight: bold;
+      color: #ffb6e6;
     }
     .loading {
       font-size: 1rem;
-      color: #777;
+      color: #c792ea;
       margin-top: 1rem;
     }
-    .minion-container {
+    .kinder-container {
       margin: 1rem auto;
       width: 200px;
       height: 200px;
       position: relative;
       cursor: pointer;
       transition: transform 0.3s;
+      background: url('https://i.pinimg.com/originals/6f/6d/8b/6f6d8b3e3c7b3c3e3c7b3c3e3c7b3c3e.png') center/contain no-repeat;
     }
-    .minion-container:hover {
-      transform: scale(1.05);
-    }
-    .minion-gif {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
+    .kinder-container:hover {
+      transform: scale(1.05) rotate(-5deg);
     }
     .interactive-box {
-      background-color: rgba(255,255,255,0.5);
+      background-color: rgba(42, 19, 68, 0.7);
       border-radius: 15px;
       padding: 1.5rem;
-      margin: 1rem auto;
+      margin: 1.5rem auto;
       max-width: 500px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 20px rgba(166, 27, 140, 0.3);
+      border: 1px solid #a61b8c;
     }
     .question {
       font-weight: bold;
       margin-bottom: 1rem;
+      color: #ffb6e6;
+      font-size: 1.2rem;
     }
     .options {
       display: flex;
       justify-content: center;
       gap: 1rem;
-      margin-top: 1rem;
+      margin-top: 1.5rem;
       flex-wrap: wrap;
     }
     .option-btn {
-      padding: 0.5rem 1rem;
+      padding: 0.7rem 1.5rem;
       border: none;
-      border-radius: 20px;
-      background-color: #ffd700;
+      border-radius: 25px;
+      background: linear-gradient(145deg, #ff6bcd 0%, #c53d9a 100%);
+      color: white;
       cursor: pointer;
       font-weight: bold;
       transition: all 0.3s;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(197, 61, 154, 0.3);
     }
     .option-btn:hover {
       transform: translateY(-3px);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      box-shadow: 0 6px 15px rgba(197, 61, 154, 0.5);
+      background: linear-gradient(145deg, #ff80d5 0%, #d94cab 100%);
     }
     .hidden {
       display: none;
     }
     .response {
-      margin-top: 1rem;
+      margin-top: 1.5rem;
       font-style: italic;
-      color: #d63384;
+      color: #ffb6e6;
       font-weight: bold;
       animation: fadeIn 0.5s;
+      text-shadow: 0 0 5px rgba(255, 182, 230, 0.5);
     }
     @keyframes fadeIn {
       from { opacity: 0; }
@@ -129,75 +133,87 @@
       0% { transform: translateY(0) rotate(0deg); opacity: 1; }
       100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
     }
-    .banana {
+    .kinder-toy {
       position: absolute;
       width: 40px;
       height: 40px;
-      background-image: url('https://clipart-library.com/images/8ixKbxj8T.png');
       background-size: contain;
       background-repeat: no-repeat;
       pointer-events: none;
-      animation: bananaFall linear;
+      animation: kinderFall linear;
     }
-    @keyframes bananaFall {
+    @keyframes kinderFall {
       to { transform: translateY(100vh); }
+    }
+    .chocolate {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background-image: url('https://cdn-icons-png.flaticon.com/512/3081/3081840.png');
+      background-size: contain;
+      pointer-events: none;
+      animation: chocolateFall linear;
+    }
+    @keyframes chocolateFall {
+      to { transform: translateY(100vh) rotate(360deg); }
+    }
+    .romantic-cursor {
+      cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><path fill='%23ff6bcd' d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/></svg>"), auto;
     }
   </style>
 </head>
-<body>
-  <div class="loading">Pls Waiting with smile...🪐</div>
-  <h1>To My Minion 💝</h1>
+<body class="romantic-cursor">
+  <div class="loading">Loading our special moment... ✨</div>
+  <h1>To My Dearest Minion 💝</h1>
   
-  <div class="minion-container">
-    <img src="https://media.tenor.com/ExlniIS7-qkAAAAM/minions-love.gif" alt="Cute Minion" class="minion-gif">
-  </div>
+  <div class="kinder-container" onclick="createKinderToy()"></div>
   
   <p class="message">
-    En Bujuku kutty...🐷 . <br>
-    Sorry annaiki un situation epudinu purinjukama pesita dii Mini... mannichuu . <br>
-    Sorry 💝
+    My Bujuku kutty...🐷<br>
+    I'm truly sorry for not understanding your situation earlier...<br>
+    Please forgive this foolish heart 💝
   </p>
   
   <div class="interactive-box">
     <div id="question1">
-      <div class="question">Mini, do you accept my apology? 👉👈</div>
+      <div class="question">My sweet Minion, will you accept my apology? 🌸</div>
       <div class="options">
-        <button class="option-btn" onclick="respond('yes')">YES! 😊</button>
-        <button class="option-btn" id="no-btn" onmouseover="dodgeButton()">No 😠</button>
+        <button class="option-btn" onclick="respond('yes')">YES! 💖</button>
+        <button class="option-btn" id="no-btn" onmouseover="dodgeButton()">Hmm... 🤔</button>
       </div>
     </div>
     
     <div id="question2" class="hidden">
-      <div class="question">Will you give me one more chance? 🥺</div>
+      <div class="question">Will you let me make it up to you with Kinder Joy? 🍫</div>
       <div class="options">
-        <button class="option-btn" onclick="respond('ofcourse')">Of course! 💝</button>
-        <button class="option-btn" onclick="respond('maybe')">Maybe... 😏</button>
+        <button class="option-btn" onclick="respond('chocolate')">Only if it's pink! 💗</button>
+        <button class="option-btn" onclick="respond('surprise')">Surprise me! 🎀</button>
       </div>
     </div>
     
     <div id="question3" class="hidden">
-      <div class="question">Can we be besties again? 🫰🏻</div>
+      <div class="question">Can we share this Kinder Joy together? 👫</div>
       <div class="options">
-        <button class="option-btn" onclick="respond('always')">Always! 💙</button>
-        <button class="option-btn" onclick="createBanana()">Throw banana instead 🍌</button>
+        <button class="option-btn" onclick="respond('always')">Always! 💞</button>
+        <button class="option-btn" onclick="createChocolates()">Throw chocolates first! 🍫</button>
       </div>
     </div>
     
     <div id="final-response" class="hidden">
-      <div class="response">Yay! You're the best Minion ever! Let's go eat bananas together! 🍌💛</div>
-      <button class="option-btn" onclick="celebrate()" style="margin-top: 1rem;">Celebrate! 🎉</button>
+      <div class="response">You've unlocked my heart's Kinder Joy! Forever yours... 💝</div>
+      <button class="option-btn" onclick="celebrate()" style="margin-top: 1.5rem; background: linear-gradient(145deg, #c53d9a 0%, #ff6bcd 100%);">Celebrate Love! 💖</button>
     </div>
     
     <div id="response-text" class="response"></div>
   </div>
   
   <p class="message">
-    Unna naanu kaaya paduthiruntha , I really Sorry da 🫰🏻.<br>
-    Pls light ah konjama enakaga Siri paapom... 👀<br>
-    Ah ah ah avlotha ithe maari sirichutu iru athu pothu 🫰🏻💙🪐...
+    I promise to be more understanding from now on...<br>
+    Let's share our joys like Kinder Joy surprises!<br>
+    Your smile is my favorite toy inside every heart 💝
   </p>
   
-  <div class="footer">Always your Vicky 💙</div>
+  <div class="footer">Forever your Vicky 💙</div>
 
   <audio autoplay loop>
     <source src="https://files.catbox.moe/c3wrw3.mp3" type="audio/mpeg">
@@ -223,17 +239,17 @@
       const responseText = document.getElementById('response-text');
       
       if (answer === 'yes') {
-        responseText.textContent = "Yay! I knew you'd forgive me! 😊";
+        responseText.textContent = "My heart just did a happy dance! 💃";
         document.getElementById('question1').classList.add('hidden');
         document.getElementById('question2').classList.remove('hidden');
       } 
-      else if (answer === 'ofcourse') {
-        responseText.textContent = "You're the best Minion ever! 💝";
+      else if (answer === 'chocolate') {
+        responseText.textContent = "Pink it is! Just like my cheeks when I think of you 💗";
         document.getElementById('question2').classList.add('hidden');
         document.getElementById('question3').classList.remove('hidden');
       }
-      else if (answer === 'maybe') {
-        responseText.textContent = "I'll work hard to earn your trust back! 😊";
+      else if (answer === 'surprise') {
+        responseText.textContent = "Life with you is the best surprise of all! 🎁";
         document.getElementById('question2').classList.add('hidden');
         document.getElementById('question3').classList.remove('hidden');
       }
@@ -250,55 +266,70 @@
     function dodgeButton() {
       const noBtn = document.getElementById('no-btn');
       noBtn.style.position = 'absolute';
-      noBtn.style.left = Math.random() * 80 + 10 + '%';
-      noBtn.style.top = Math.random() * 50 + 30 + '%';
+      noBtn.style.left = Math.random() * 70 + 15 + '%';
+      noBtn.style.top = Math.random() * 40 + 30 + '%';
+      noBtn.textContent = "Maybe... 😊";
     }
     
     function createHearts() {
+      const heartColors = ['💗', '💖', '💘', '💝', '💓'];
       for (let i = 0; i < 10; i++) {
         const heart = document.createElement('div');
         heart.classList.add('heart');
-        heart.innerHTML = '💛';
+        heart.innerHTML = heartColors[Math.floor(Math.random() * heartColors.length)];
         heart.style.left = Math.random() * 100 + '%';
-        heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+        heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
         heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
         document.body.appendChild(heart);
         
-        // Remove heart after animation
         setTimeout(() => {
           heart.remove();
         }, 4000);
       }
     }
     
-    function createBanana() {
-      const banana = document.createElement('div');
-      banana.classList.add('banana');
-      banana.style.left = Math.random() * 100 + '%';
-      banana.style.top = '-50px';
-      banana.style.animationDuration = (Math.random() * 2 + 1) + 's';
-      document.body.appendChild(banana);
+    function createKinderToy() {
+      const toys = [
+        'https://cdn-icons-png.flaticon.com/512/3081/3081840.png', // chocolate
+        'https://cdn-icons-png.flaticon.com/512/3199/3199938.png', // teddy
+        'https://cdn-icons-png.flaticon.com/512/3081/3081559.png', // car
+        'https://cdn-icons-png.flaticon.com/512/3081/3081525.png'  // doll
+      ];
       
-      // Remove banana after animation
+      const toy = document.createElement('div');
+      toy.classList.add('kinder-toy');
+      toy.style.backgroundImage = `url('${toys[Math.floor(Math.random() * toys.length)]}')`;
+      toy.style.left = Math.random() * 100 + '%';
+      toy.style.top = '-50px';
+      toy.style.animationDuration = (Math.random() * 2 + 1) + 's';
+      document.body.appendChild(toy);
+      
       setTimeout(() => {
-        banana.remove();
+        toy.remove();
       }, 1000);
+    }
+    
+    function createChocolates() {
+      for (let i = 0; i < 5; i++) {
+        const choco = document.createElement('div');
+        choco.classList.add('chocolate');
+        choco.style.left = Math.random() * 100 + '%';
+        choco.style.top = '-50px';
+        choco.style.animationDuration = (Math.random() * 2 + 1) + 's';
+        document.body.appendChild(choco);
+        
+        setTimeout(() => {
+          choco.remove();
+        }, 1000);
+      }
       
-      // Change response text
-      document.getElementById('response-text').textContent = "Banana attack! 🍌 But okay, I forgive you! 😆";
+      document.getElementById('response-text').textContent = "Chocolate shower! Now let's share the sweet moments together 🍫💖";
       document.getElementById('question3').classList.add('hidden');
       document.getElementById('final-response').classList.remove('hidden');
-      
-      // Create more bananas
-      for (let i = 0; i < 5; i++) {
-        setTimeout(() => {
-          createBanana();
-        }, i * 300);
-      }
     }
     
     function celebrate() {
-      // Create lots of hearts and sparkles
+      // Create hearts
       for (let i = 0; i < 30; i++) {
         setTimeout(() => {
           createHearts();
@@ -306,29 +337,36 @@
         }, i * 100);
       }
       
-      // Create bananas
+      // Create kinder toys
       for (let i = 0; i < 10; i++) {
         setTimeout(() => {
-          createBanana();
+          createKinderToy();
         }, i * 200);
       }
       
-      document.getElementById('response-text').textContent = "Wooohooo! Best Minion award goes to you! 🏆💛";
+      // Create chocolates
+      for (let i = 0; i < 15; i++) {
+        setTimeout(() => {
+          createChocolates();
+        }, i * 150);
+      }
+      
+      document.getElementById('response-text').textContent = "Our love is sweeter than Kinder chocolate! Forever my Minion 💝";
     }
-    
-    // Make minion clickable
-    document.querySelector('.minion-container').addEventListener('click', function() {
-      this.style.transform = 'scale(1.1) rotate(5deg)';
-      setTimeout(() => {
-        this.style.transform = 'scale(1)';
-      }, 300);
-      createHearts();
-    });
     
     // Remove loading text after 2 seconds
     setTimeout(() => {
       document.querySelector('.loading').style.display = 'none';
     }, 2000);
+    
+    // Make kinder container interactive
+    document.querySelector('.kinder-container').addEventListener('click', function() {
+      this.style.transform = 'scale(1.1) rotate(-5deg)';
+      setTimeout(() => {
+        this.style.transform = 'scale(1)';
+      }, 300);
+      createHearts();
+    });
   </script>
 </body>
 </html>
